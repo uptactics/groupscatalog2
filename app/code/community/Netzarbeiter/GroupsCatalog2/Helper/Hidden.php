@@ -58,13 +58,16 @@ class Netzarbeiter_GroupsCatalog2_Helper_Hidden extends Mage_Core_Helper_Abstrac
      */
     public function applyHiddenEntityHandling($entityTypeCode)
     {
-        $redirectSet = $this->_applyHiddenEntityRedirect($entityTypeCode);
+        $currentRoute = Mage::app()->getRequest()->getModuleName();
+        if($currentRoute != 'cms') {
+            $redirectSet = $this->_applyHiddenEntityRedirect($entityTypeCode);
 
-        $this->_applyHiddenEntityMsg($entityTypeCode);
+            $this->_applyHiddenEntityMsg($entityTypeCode);
 
-        if ($redirectSet) {
-            // Since we want to redirect anyway there really is no need to continue.
-            exit();
+            if ($redirectSet) {
+                // Since we want to redirect anyway there really is no need to continue.
+                exit();
+            }
         }
         return $this;
     }
