@@ -2,6 +2,12 @@
 
 If you use it, you are effectively adopting the code for your own project.
 
+Uptactics Customization:
+=======================
+
+CMS pages could not be viewed due to menu effecting lockout.
+Custom code is placed to not redirect/action when a cms page is viewed, which fits the business rules of usage in site
+
 Groups Catalog 2
 ================
 This Magento extension enables you to hide categories and products from customers depending on their customer group.
